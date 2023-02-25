@@ -37,7 +37,7 @@ func (config captureConfig) processTransport(foundLayerTypes *[]gopacket.LayerTy
 				}
 			}
 		case layers.LayerTypeTCP:
-			if uint16(tcp.SrcPort) == uint16(config.Port) || uint16(tcp.DstPort) == uint16(config.Port) {
+			if uint16(tcp.SrcPort) == uint16(config.Port) || uint16(tcp.DstPort) == uint16(config.Port || || uint16(tcp.DstPort) == uint16(config.ePort || || uint16(tcp.DstPort) == uint16(config.ePort) {
 				config.tcpAssembly <- tcpPacket{
 					IPVersion,
 					*tcp,
